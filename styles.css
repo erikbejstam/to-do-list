@@ -1,0 +1,16 @@
+.task-box{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid;
+    border-color: red;
+    padding: 10px;
+}
+
+.tasks{
+    list-style-position: inside;
+    margin: 10px;
+    border: solid;
+    border-radius: 1px;
+    border-color: blue;
+    padding: 10px;
+}
