@@ -13,7 +13,13 @@
 - [x] Basic structure of HTML doc
 - [ ] Make it dynamic with TS
   - [ ] Routing data from input
+  - [ ] Creating new elements (tasks) on the page
+  - [ ] Deleting elements from the page
 - [ ] Style it nicely with CSS
-- [ ] Style it nicely with Tailwind CSS
-- [ ] Implement small backend with NodeJS
+- [ ] Redo styling with Tailwind CSS
+- [ ] Implement small backend with NodeJS (CRUD)
+  - [ ] Save tasks to DB
+  - [ ] Delete tasks from DB
+  - [ ] Get tasks from DB
+  - [ ] Edit existing task, save to DB.
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
