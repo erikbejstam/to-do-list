@@ -4,7 +4,7 @@
 
 - HTML
 - CSS
-- Tailwind, Bootstrap, SASS or some other CSS framwork?
+- Tailwind, Bootstrap, SASS or some other CSS framework?
 - Vanilla TS
 - NodeJS
 
@@ -19,7 +19,9 @@
   - [x] Deleting elements from the page
   - [x] Clear text from input after submit.
 - [ ] Style it nicely with CSS
-  - [ ] Have task texts be in a box, so that the delete button can line up nicely on the right.
+  - [x] Have task texts be in a box, so that the delete button can line up nicely on the right.
+  - [ ] Find a nice color scheme and implement
+  - [ ] Implement a modern minimalistic look
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
 
 ### Secondary goals
