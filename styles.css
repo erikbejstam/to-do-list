@@ -1,3 +1,14 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    border: solid;
+    border-color: black;
+    padding: 10px;
+}
+
 .task-box{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -6,7 +17,7 @@
     padding: 10px;
 }
 
-.tasks{
+.task-list{
     list-style-position: inside;
     margin: 10px;
     border: solid;
@@ -14,3 +25,14 @@
     border-color: blue;
     padding: 10px;
 }
+
+.delete-button{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+label {
+    display: none;
+}
+
