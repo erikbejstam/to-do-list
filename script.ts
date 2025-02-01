@@ -40,8 +40,12 @@ function handleSubmit(event: Event) {
 }
 
 function addTask(task: Task) {
-    const taskItem = document.createElement('li')
-    taskItem.textContent = task.text; // Using textContext. Could've used innerHTML or appendChild with a textNode.
+    const taskItem = document.createElement('li');
+    taskItem.classList.add("task-item")
+    const taskText = document.createElement('span');
+    taskText.classList.add('task-text');
+    taskText.textContent = task.text; // Using textContext. Could've used innerHTML or appendChild with a textNode.
+    taskItem.appendChild(taskText);
     taskInput.value = "";
 
     addDeleteButton(taskItem)

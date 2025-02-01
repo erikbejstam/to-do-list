@@ -18,6 +18,8 @@ body{
 }
 
 .task-list{
+    display: flex;
+    flex-direction: column; 
     list-style-position: inside;
     margin: 10px;
     border: solid;
@@ -26,10 +28,27 @@ body{
     padding: 10px;
 }
 
+.task-item{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    border: solid;
+    padding: 5px;
+}
+
+.task-text{
+    flex: 3 
+}
+
 .delete-button{
+    flex: 1;
     margin-left: 10px;
     margin-right: 10px;
-    padding: 5px;
+    padding: 2px;
+}
+
+#task-form {
+    margin: 10px;
 }
 
 label {
