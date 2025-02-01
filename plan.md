@@ -11,12 +11,18 @@
 ## What to do
 
 - [x] Basic structure of HTML doc
-- [ ] Make it dynamic with TS
-  - [ ] Routing data from input
-  - [ ] Creating new elements (tasks) on the page
-  - [ ] Deleting elements from the page
+- [ ] Functionality
+  - [x] Routing data from input
+  - [x] Creating new elements (tasks) on the page
+  - [x] Deleting elements from the page
+  - [ ] Edit tasks
+  - [ ] Toggle "task completed"?
+  - [ ] If completed -> move somewhere else?
+- [ ] Make it more OOP...
 - [ ] Style it nicely with CSS
-- [ ] Redo styling with Tailwind CSS
+  - [ ] Have task texts be in a box, so that the delete button can line up nicely on the right.
+  - [x] Clear text from input after submit.
+- [ ] Redo styling with Tailwind CSS/Bootstrap/SASS
 - [ ] Implement small backend with NodeJS (CRUD)
   - [ ] Save tasks to DB
   - [ ] Delete tasks from DB
