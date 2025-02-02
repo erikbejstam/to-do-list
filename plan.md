@@ -20,6 +20,7 @@
   - [x] Clear text from input after submit.
 - [ ] Style it nicely with CSS
   - [x] Have task texts be in a box, so that the delete button can line up nicely on the right.
+  - [ ] Make list of tasks scrollable, so that the "add" button is always visible.
   - [ ] Find a nice color scheme and implement
   - [ ] Implement a modern minimalistic look
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
