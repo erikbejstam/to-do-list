@@ -1,21 +1,39 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     display: flex;
     justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to top right, #FFBD7A, #FFFDFB);
+    margin: 0;
 }
 
-.container{
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0;
     width: 600px;
     max-width: 600px;
-    border: solid;
-    border-color: black;
+    margin: 40px;
+    border: solid grey 2px;
+    border-radius: 10px;
     padding: 10px;
+    background-color: #FFE6CC;
+    opacity: 1;
+    box-shadow: 2px 2px 2px grey;
 }
 
 .task-box{
     margin-top: 10px;
     margin-bottom: 10px;
-    border: solid;
-    border-color: red;
     padding: 10px;
 }
 
@@ -23,10 +41,6 @@ body{
     display: flex;
     flex-direction: column; 
     list-style-position: inside;
-    margin: 10px;
-    border: solid;
-    border-radius: 1px;
-    border-color: blue;
     padding: 10px;
 }
 
@@ -34,8 +48,10 @@ body{
     display: flex;
     flex-direction: row;
     margin: 5px;
-    border: solid;
+    border: solid grey 2px;
+    border-radius: 6px;
     padding: 5px;
+    background-color: #fff2e6;
 }
 
 .task-text{
@@ -51,8 +67,16 @@ body{
     padding: 2px;
 }
 
+.delete-icon {
+    width: 50px;
+    height: 50px;
+    background: url('icon.svg') no-repeat center center;
+    background-size: contain; 
+}
+
 #task-form {
     margin: 10px;
+    padding-left: 10px;
 }
 
 label {
