@@ -1,18 +1,18 @@
 * {
     font-family: 'Poppins';
+    font-weight: normal;
 }
 
 body{
     display: flex;
     justify-content: center;
     height: 100vh;
-    background-image: linear-gradient(to top right, #009dff, #ff60df);
+    background-image: linear-gradient(to top right, #982176, #FFE5AD);
     margin: 0;
 }
 
 h1, h2{
-    color: rgb(203, 203, 237);
-    -webkit-text-stroke: 2px rgb(50, 50, 50);
+    color: #fff2e6;
 }
 
 .main-container{
@@ -31,7 +31,7 @@ h1, h2{
     border: solid grey 2px;
     border-radius: 10px;
     padding: 10px;
-    background-image: linear-gradient(to top right, #0048cd, #c0e4fa);
+    background-image: linear-gradient(to top right, #FFE5AD, #F11A7B);
     opacity: 1;
     box-shadow: 2px 2px 2px grey;
 }
