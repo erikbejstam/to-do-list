@@ -27,6 +27,7 @@
   - [ ] Implement a modern minimalistic look
   - [ ] Make sure it works on different screens/mobile etc. Looks shit on mobile rn.
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
+- [ ] Configure Github Actions workflow that builds script.js from script.ts and deploys site to Pages.
 
 ### Secondary goals
 
