@@ -52,6 +52,11 @@ h1, h2{
 .task-item{
     display: flex;
     flex-direction: row;
+}
+
+.task-text{
+    flex: 9;
+    word-break: break-word;
     margin: 5px;
     border: solid grey 2px;
     border-radius: 6px;
@@ -59,16 +64,11 @@ h1, h2{
     background-color: #fff2e6;
 }
 
-.task-text{
-    flex: 3;
-    word-break: break-word;
-}
-
 .delete-button{
+    height: 34px;
+    width: 34px;
     flex: 1;
     align-self: center;
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 2px;
 }
 
@@ -80,13 +80,22 @@ h1, h2{
 }
 
 #task-form {
-    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
     padding-left: 10px;
 }
 
-input{
+.task-input{
+    margin: 10px;
     border-radius: 5px;
     background-color: #fff2e6;
+}
+
+.add-button{
+    width: 30px;
+    height: 30px;
 }
 
 label {

@@ -7,6 +7,7 @@ type Task = {
 const taskForm = document.getElementById("task-form");
 const taskInput = document.getElementById("task-input") as HTMLInputElement;
 const taskList = document.querySelector(".task-list");
+const addButton = document.querySelector(".add-button") as HTMLImageElement;
 
 // Init
 const initialTasks: Task[] = [
@@ -21,6 +22,18 @@ if (taskForm && taskInput) {
 
 if (taskList) {
     document.addEventListener("DOMContentLoaded", loadDefaultTasks);
+}
+
+if (addButton) {
+    addButton.addEventListener('mouseover', () => {
+        addButton.style.opacity = '0.6';
+    })
+    addButton.addEventListener('mouseout', () => {
+        addButton.style.opacity = '1';
+    })
+    addButton.addEventListener('click', (event) => {
+        handleSubmit(event);
+    })
 }
 
 // Function and handlers
@@ -54,13 +67,21 @@ function addTask(task: Task) {
 }
 
 function addDeleteButton(taskItem: HTMLElement) {
-    const newDeleteButton = document.createElement('button')
-    newDeleteButton.textContent = "Delete";
-    newDeleteButton.type = "button";
+    const newDeleteButton = document.createElement('img')
+    newDeleteButton.src = "./icons/delete-1-svgrepo-com.svg";
+    newDeleteButton.alt = "Delete Button";
     newDeleteButton.className = "delete-button"
+
     newDeleteButton.addEventListener('click', () => {
         taskItem.remove()
     })
+    newDeleteButton.addEventListener('mouseover', () => {
+        newDeleteButton.style.opacity = '0.6';
+    })
+    newDeleteButton.addEventListener('mouseout', () => {
+        newDeleteButton.style.opacity = '1';
+    })
+
     taskItem.appendChild(newDeleteButton)
 }
 
