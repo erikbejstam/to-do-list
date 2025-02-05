@@ -1,0 +1,30 @@
+name: Custom deploy to Github Pages
+
+on:
+    push:
+      branches:
+        - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/setup-node@v2
+
+            - name: Install TypeScript
+              run: npm install -g typescript
+
+            - name: Compile TypeScript
+              run: tsc script.ts
+
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                branch: gh-pages
+                folder: .
+
