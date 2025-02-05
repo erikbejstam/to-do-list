@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-    build-and-deploy:
+    build:
         runs-on: ubuntu-latest
 
         steps:
@@ -25,9 +25,29 @@ jobs:
             - name: Compile TypeScript
               run: tsc 
 
-            - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
+            - name: Upload built files
+              uses: actions/upload-artifact@v3
               with:
-                branch: gh-pages
-                folder: .
+                name: built-files
+                path: script.js 
 
+    deploy:
+      needs: build
+
+      runs-on: ubuntu-latest
+
+      permissions:
+        pages: write
+        id-token: write
+
+      environment:
+        name: github-pages
+        url: 'https://erikbejstam.github.io/to-do-list/'
+
+      steps:
+        - name: Setup Pages
+          uses: actions/configure-pages@v5
+
+        - name: Deploy
+          uses: actions/deploy-pages@v4              
+                
