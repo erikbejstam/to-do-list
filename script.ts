@@ -46,9 +46,15 @@ function loadDefaultTasks(event: Event){
 function handleSubmit(event: Event) {
     event.preventDefault();
 
-    const newTask: Task = {
-        text: taskInput.value
+    const taskValue = taskInput.value.trim();   
+
+    if (taskValue === "") {
+        alert("Please enter a task.");
+        return;  // Do nothing if the input is empty
     }
+
+    const newTask: Task = {text: taskInput.value}
+
     addTask(newTask)
 }
 
