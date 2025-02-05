@@ -21,15 +21,12 @@
 - [ ] Style it nicely with CSS
   - [x] Have task texts be in a box, so that the delete button can line up nicely on the right.
   - [x] Add SVG icons for delete and add buttons.
-  - [ ] Make list of tasks scrollable, so that the "add" button is always visible.
-  - [ ] Find a nice color scheme and implement
-  - [ ] Find nice font
-  - [ ] Implement a modern minimalistic look
+  - [ ] Make list of tasks scrollable to prevent overflowing the ul, and so that the "add" button is always visible.
+  - [/] Find a nice color scheme and implement
+  - [/] Find nice font
+  - [/] Implement a modern minimalistic look
   - [ ] Make CSS responsive. Looks shit on mobile rn.
   - [ ] Clean up stylesheet. A lot of redundancy in there.
-  - Phone specific:
-    - [ ] Make sure task list is scrollable - otherwise tasks overflow..
-
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
 - [ ] Configure Github Actions workflow that builds script.js from script.ts and deploys site to Pages.
 
