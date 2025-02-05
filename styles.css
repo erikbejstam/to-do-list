@@ -9,10 +9,15 @@ body{
     height: 100vh;
     background-image: linear-gradient(to top right, #982176, #FFE5AD);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2{
     color: #fff2e6;
+}
+
+h1 {
+    text-align: center;
 }
 
 .main-container{
