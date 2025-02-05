@@ -23,7 +23,7 @@ jobs:
               run: npm install -g typescript
 
             - name: Compile TypeScript
-              run: tsc --project tsconfig.json
+              run: tsc 
 
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@v4
