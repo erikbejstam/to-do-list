@@ -1,13 +1,12 @@
-"use strict";
 // DOM Elements
-const taskForm = document.getElementById("task-form");
-const taskInput = document.getElementById("task-input");
-const taskList = document.querySelector(".task-list");
-const addButton = document.querySelector(".add-button");
+var taskForm = document.getElementById("task-form");
+var taskInput = document.getElementById("task-input");
+var taskList = document.querySelector(".task-list");
+var addButton = document.querySelector(".add-button");
 // Init
-const initialTasks = [
+var initialTasks = [
     { text: "Buy groceries" },
-    { text: "Pet cat" }
+    { text: "Pet doge" }
 ];
 // Event listeners
 if (taskForm && taskInput) {
@@ -17,33 +16,38 @@ if (taskList) {
     document.addEventListener("DOMContentLoaded", loadDefaultTasks);
 }
 if (addButton) {
-    addButton.addEventListener('mouseover', () => {
+    addButton.addEventListener('mouseover', function () {
         addButton.style.opacity = '0.6';
     });
-    addButton.addEventListener('mouseout', () => {
+    addButton.addEventListener('mouseout', function () {
         addButton.style.opacity = '1';
     });
-    addButton.addEventListener('click', (event) => {
+    addButton.addEventListener('click', function (event) {
         handleSubmit(event);
     });
 }
 // Function and handlers
 function loadDefaultTasks(event) {
-    for (const task of initialTasks) {
+    for (var _i = 0, initialTasks_1 = initialTasks; _i < initialTasks_1.length; _i++) {
+        var task = initialTasks_1[_i];
         addTask(task);
     }
 }
 function handleSubmit(event) {
     event.preventDefault();
-    const newTask = {
-        text: taskInput.value
-    };
+    var taskValue = taskInput.value.trim();
+    if (!taskInput.checkValidity()) {
+        event.preventDefault();
+        taskInput.reportValidity();
+        return;
+    }
+    var newTask = { text: taskInput.value };
     addTask(newTask);
 }
 function addTask(task) {
-    const taskItem = document.createElement('li');
+    var taskItem = document.createElement('li');
     taskItem.classList.add("task-item");
-    const taskText = document.createElement('span');
+    var taskText = document.createElement('span');
     taskText.classList.add('task-text');
     taskText.textContent = task.text; // Using textContext. Could've used innerHTML or appendChild with a textNode.
     taskItem.appendChild(taskText);
@@ -52,17 +56,17 @@ function addTask(task) {
     taskList === null || taskList === void 0 ? void 0 : taskList.appendChild(taskItem);
 }
 function addDeleteButton(taskItem) {
-    const newDeleteButton = document.createElement('img');
+    var newDeleteButton = document.createElement('img');
     newDeleteButton.src = "./icons/delete-1-svgrepo-com.svg";
     newDeleteButton.alt = "Delete Button";
     newDeleteButton.className = "delete-button";
-    newDeleteButton.addEventListener('click', () => {
+    newDeleteButton.addEventListener('click', function () {
         taskItem.remove();
     });
-    newDeleteButton.addEventListener('mouseover', () => {
+    newDeleteButton.addEventListener('mouseover', function () {
         newDeleteButton.style.opacity = '0.6';
     });
-    newDeleteButton.addEventListener('mouseout', () => {
+    newDeleteButton.addEventListener('mouseout', function () {
         newDeleteButton.style.opacity = '1';
     });
     taskItem.appendChild(newDeleteButton);

@@ -48,9 +48,10 @@ function handleSubmit(event: Event) {
 
     const taskValue = taskInput.value.trim();   
 
-    if (taskValue === "") {
-        alert("Please enter a task.");
-        return;  // Do nothing if the input is empty
+    if (!taskInput.checkValidity()) { 
+        event.preventDefault(); 
+        taskInput.reportValidity();
+        return
     }
 
     const newTask: Task = {text: taskInput.value}
