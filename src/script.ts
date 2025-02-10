@@ -12,7 +12,7 @@ const addButton = document.querySelector(".add-button") as HTMLImageElement;
 // Init
 const initialTasks: Task[] = [
     {text: "Buy groceries"},
-    {text: "Pet doge"}
+    {text: "Pet dogee"}
 ];
 
 // Event listeners
@@ -75,7 +75,7 @@ function addTask(task: Task) {
 
 function addDeleteButton(taskItem: HTMLElement) {
     const newDeleteButton = document.createElement('img')
-    newDeleteButton.src = "./icons/delete-1-svgrepo-com.svg";
+    newDeleteButton.src = "../icons/delete-1-svgrepo-com.svg";
     newDeleteButton.alt = "Delete Button";
     newDeleteButton.className = "delete-button"
 
