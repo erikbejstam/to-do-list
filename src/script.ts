@@ -75,7 +75,7 @@ function addTask(task: Task) {
 
 function addDeleteButton(taskItem: HTMLElement) {
     const newDeleteButton = document.createElement('img')
-    newDeleteButton.src = "../public/icons/delete-1-svgrepo-com.svg";
+    newDeleteButton.src = "icons/delete-1-svgrepo-com.svg";
     newDeleteButton.alt = "Delete Button";
     newDeleteButton.className = "delete-button"
 
