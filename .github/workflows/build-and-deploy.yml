@@ -32,7 +32,7 @@ jobs:
         run: npx tsc src/script.ts --outFile ./dist/script.js
 
       - name: Copy static assets
-        run: cp -r public/* dist/
+        run: cp -r public/**/* dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
