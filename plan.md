@@ -25,7 +25,7 @@
   - [/] Find a nice color scheme and implement
   - [/] Find nice font
   - [/] Implement a modern minimalistic look
-  - [ ] Make CSS responsive. Looks shit on mobile rn.
+  - [ ] Make CSS responsive.
   - [ ] Clean up stylesheet. A lot of redundancy in there.
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
 - [x] Configure Github Actions workflow that builds script.js from script.ts and deploys site to Pages.
