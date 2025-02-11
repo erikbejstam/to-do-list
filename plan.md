@@ -28,7 +28,7 @@
   - [ ] Make CSS responsive. Looks shit on mobile rn.
   - [ ] Clean up stylesheet. A lot of redundancy in there.
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
-- [ ] Configure Github Actions workflow that builds script.js from script.ts and deploys site to Pages.
+- [x] Configure Github Actions workflow that builds script.js from script.ts and deploys site to Pages.
 
 ### Secondary goals
 
