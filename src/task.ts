@@ -1,17 +1,20 @@
 class Task {
     id: number;
     text: string;
+    element: HTMLLIElement;
+    private onDelete?: (id: number) => void;
 
     constructor(id: number, text: string) {
         this.id = id;
         this.text = text;
+        this.element = this.createElement();
     }
 
-    createTask() {
+    createElement() {
         const taskElement = document.createElement('li');
-        taskElement.classList.add("task-item")
+        taskElement.className = 'task-item';
         const taskText = document.createElement('span');
-        taskText.classList.add('task-text');
+        taskText.className = 'task-text';
         taskText.textContent = this.text; // Using textContext. Could've used innerHTML or appendChild with a textNode.
         taskElement.appendChild(taskText);
         this.createDeleteButton(taskElement)
@@ -19,14 +22,14 @@ class Task {
         return taskElement;
     }
 
-    createDeleteButton(taskItem: HTMLElement) {
+    createDeleteButton(taskItem: HTMLLIElement) {
         const newDeleteButton = document.createElement('img')
         newDeleteButton.src = "icons/delete-1-svgrepo-com.svg";
         newDeleteButton.alt = "Delete Button";
         newDeleteButton.className = "delete-button"
     
         newDeleteButton.addEventListener('click', () => {
-            taskItem.remove()
+            this.onDelete?.(this.id);
         })
         newDeleteButton.addEventListener('mouseover', () => {
             newDeleteButton.style.opacity = '0.6';
@@ -36,5 +39,15 @@ class Task {
         })
     
         taskItem.appendChild(newDeleteButton)
+    }
+
+    // Callback setters and getters
+
+    public setOnDelete(callback: (id: number) => void): void {
+        this.onDelete = callback;
+    }
+
+    public getElement(): HTMLLIElement {
+        return this.element;
     }
 }

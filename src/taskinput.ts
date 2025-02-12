@@ -1,73 +1,53 @@
-const taskList = document.querySelector(".task-list");
-const taskForm = document.getElementById("task-form");
-const taskInput = document.getElementById("task-input") as HTMLInputElement;
-const addButton = document.querySelector(".add-button") as HTMLImageElement;
+class TaskInput {
+    private formElement: HTMLFormElement;
+    private inputElement: HTMLInputElement;
+    private buttonElement: HTMLImageElement;
+    public submitCallback: (text: string) => void;
 
-
-// Event listeners
-
-if (addButton) {
-    addButton.addEventListener('mouseover', () => {
-        addButton.style.opacity = '0.6';
-    })
-    addButton.addEventListener('mouseout', () => {
-        addButton.style.opacity = '1';
-    })
-    addButton.addEventListener('click', (event) => {
-        handleSubmit(event);
-    })
-}
-
-if (taskForm && taskInput) {
-    taskForm.addEventListener('submit', handleSubmit);
-}
-
-// Handler functions
-
-function handleSubmit(event: Event) {
-    event.preventDefault();
-
-    const taskText = taskInput.value.trim();   
-
-    if (!taskInput.checkValidity()) { 
-        event.preventDefault(); 
-        taskInput.reportValidity();
-        return
+    constructor(submitCallback: (text: string) => void) {
+        this.formElement = document.getElementById("task-form") as HTMLFormElement;
+        this.inputElement = document.getElementById("task-input") as HTMLInputElement;
+        this.buttonElement = document.querySelector(".add-button") as HTMLImageElement;
+        this.submitCallback = submitCallback;
+        this.init();
     }
 
-    const newTask: Task = new Task(Date.now(), taskText)
-    addTask(newTask)
-}
+    init() {
+        if (this.buttonElement) {
+            console.log("init")
+            this.buttonElement.addEventListener('mouseover', () => {
+                this.buttonElement.style.opacity = '0.6';
+            })
+            this.buttonElement.addEventListener('mouseout', () => {
+                this.buttonElement.style.opacity = '1';
+            })
+            this.buttonElement.addEventListener('click', (event) => {
+                this.handleSubmit(event);
+            })
+        }
+        
+        if (this.formElement && this.inputElement) {
+            console.log("init")
+            this.formElement.addEventListener('submit', (event) => {
+                this.handleSubmit(event);
+            })
+        }
+    }
 
-function addTask(task: Task) {
-    const taskItem = document.createElement('li');
-    taskItem.classList.add("task-item")
-    const taskText = document.createElement('span');
-    taskText.classList.add('task-text');
-    taskText.textContent = task.text; // Using textContext. Could've used innerHTML or appendChild with a textNode.
-    taskItem.appendChild(taskText);
-    taskInput.value = "";
+    handleSubmit = (event: Event): void => {
+        event.preventDefault();
+        const taskText = this.inputElement.value.trim();   
 
-    addDeleteButton(taskItem)
+        if (!this.inputElement.checkValidity()) { 
+            this.inputElement.reportValidity();
+            return;
+        }
 
-    taskList?.appendChild(taskItem);
-}
+        this.inputElement.value = "";
+        console.log("submitCallback:", this.submitCallback);
 
-function addDeleteButton(taskItem: HTMLElement) {
-    const newDeleteButton = document.createElement('img')
-    newDeleteButton.src = "icons/delete-1-svgrepo-com.svg";
-    newDeleteButton.alt = "Delete Button";
-    newDeleteButton.className = "delete-button"
+        this.submitCallback(taskText)
+        console.log("After submitCallback")
+    }
 
-    newDeleteButton.addEventListener('click', () => {
-        taskItem.remove()
-    })
-    newDeleteButton.addEventListener('mouseover', () => {
-        newDeleteButton.style.opacity = '0.6';
-    })
-    newDeleteButton.addEventListener('mouseout', () => {
-        newDeleteButton.style.opacity = '1';
-    })
-
-    taskItem.appendChild(newDeleteButton)
 }
