@@ -1,28 +1,10 @@
-// Objects and types
-type Task = {
-    text: string;
-}
-
-// DOM Elements
+const taskList = document.querySelector(".task-list");
 const taskForm = document.getElementById("task-form");
 const taskInput = document.getElementById("task-input") as HTMLInputElement;
-const taskList = document.querySelector(".task-list");
 const addButton = document.querySelector(".add-button") as HTMLImageElement;
 
-// Init
-const initialTasks: Task[] = [
-    {text: "Buy groceries"},
-    {text: "Pet doge"}
-];
 
 // Event listeners
-if (taskForm && taskInput) {
-    taskForm.addEventListener('submit', handleSubmit);
-}
-
-if (taskList) {
-    document.addEventListener("DOMContentLoaded", loadDefaultTasks);
-}
 
 if (addButton) {
     addButton.addEventListener('mouseover', () => {
@@ -36,17 +18,16 @@ if (addButton) {
     })
 }
 
-// Function and handlers
-function loadDefaultTasks(event: Event){
-    for (const task of initialTasks) {
-        addTask(task);
-    }
+if (taskForm && taskInput) {
+    taskForm.addEventListener('submit', handleSubmit);
 }
+
+// Handler functions
 
 function handleSubmit(event: Event) {
     event.preventDefault();
 
-    const taskValue = taskInput.value.trim();   
+    const taskText = taskInput.value.trim();   
 
     if (!taskInput.checkValidity()) { 
         event.preventDefault(); 
@@ -54,8 +35,7 @@ function handleSubmit(event: Event) {
         return
     }
 
-    const newTask: Task = {text: taskInput.value}
-
+    const newTask: Task = new Task(Date.now(), taskText)
     addTask(newTask)
 }
 
@@ -91,5 +71,3 @@ function addDeleteButton(taskItem: HTMLElement) {
 
     taskItem.appendChild(newDeleteButton)
 }
-
-
