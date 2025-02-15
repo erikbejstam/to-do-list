@@ -21,10 +21,10 @@
 - [ ] Style it nicely with CSS
   - [x] Have task texts be in a box, so that the delete button can line up nicely on the right.
   - [x] Add SVG icons for delete and add buttons.
-  - [ ] Make list of tasks scrollable to prevent overflowing the ul, and so that the "add" button is always visible.
-  - [/] Find a nice color scheme and implement
-  - [/] Find nice font
-  - [/] Implement a modern minimalistic look
+  - [x] Make list of tasks scrollable to prevent overflowing the ul, and so that the "add" button is always visible.
+  - [x] Find a nice color scheme and implement
+  - [x] Find nice font
+  - [x] Implement a modern minimalistic look
   - [ ] Make CSS responsive.
   - [ ] Clean up stylesheet. A lot of redundancy in there.
 - [ ] Make sure I've covered all the "basic JS knowledge" for moving forward with React etc.
@@ -37,7 +37,7 @@
   - [ ] Toggle "task completed"?
   - [ ] If completed -> move somewhere else?
 - [ ] Make tasks dragable in the list.
-- [ ] Make it more OOP...
+- [x] Make it more OOP...
 - [ ] Redo styling with Tailwind CSS/Bootstrap/SASS
 - [ ] Implement small backend with NodeJS (CRUD)
   - [ ] Save tasks to DB
