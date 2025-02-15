@@ -21,16 +21,18 @@ class TaskList {
     }
 
     addTask(text: string): void {
-        const newTask = new Task(Date.now(), text)
+        const newTaskID = Date.now()
+        const newTask = new Task(newTaskID, text)
         newTask.setOnDelete((id) => this.deleteTask(id));
 
-        this.tasks.set(Date.now(), newTask);
+        this.tasks.set(newTaskID, newTask);
         this.element.appendChild(newTask.element);
         this.renderCallback();
     }
 
     deleteTask(id: number): void {
         const task = this.tasks.get(id);
+        console.log(this.tasks)
         if (task) {
             task.element.remove();
             this.tasks.delete(id);
