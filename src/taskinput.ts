@@ -42,7 +42,6 @@ class TaskInput {
         }
 
         this.inputElement.value = "";
-
         this.submitCallback(taskText)
     }
 
