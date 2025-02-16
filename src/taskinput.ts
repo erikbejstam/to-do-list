@@ -12,9 +12,8 @@ class TaskInput {
         this.init();
     }
 
-    init() {
+    init(): void {
         if (this.buttonElement) {
-            console.log("init")
             this.buttonElement.addEventListener('mouseover', () => {
                 this.buttonElement.style.opacity = '0.6';
             })
@@ -27,7 +26,6 @@ class TaskInput {
         }
         
         if (this.formElement && this.inputElement) {
-            console.log("init")
             this.formElement.addEventListener('submit', (event) => {
                 this.handleSubmit(event);
             })
@@ -44,10 +42,7 @@ class TaskInput {
         }
 
         this.inputElement.value = "";
-        console.log("submitCallback:", this.submitCallback);
-
         this.submitCallback(taskText)
-        console.log("After submitCallback")
     }
 
 }
