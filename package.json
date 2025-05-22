@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "private": true,
     "devDependencies": {
+        "@types/express": "^5.0.2",
         "chokidar-cli": "^3.0.0",
         "concurrently": "^9.1.2",
         "copyfiles": "^2.4.1",
         "prisma": "^6.8.2",
-        "typescript": "^5.3.3"
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.3"
     },
     "scripts": {
         "build": "tsc && npm run copy",
@@ -17,6 +19,7 @@
         "dev": "concurrently \"npm run watch-ts\" \"npm run watch-static\""
     },
     "dependencies": {
-        "@prisma/client": "^6.8.2"
+        "@prisma/client": "^6.8.2",
+        "express": "^5.1.0"
     }
 }
